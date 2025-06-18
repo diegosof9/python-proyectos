@@ -28,7 +28,10 @@ if dia < 10:
 #     ]
 
 archivos_pdf = [f for f in os.listdir() if f.endswith('.pdf')]
-archivos_pdf.sort()
+
+print(archivos_pdf)
+
+archivos_pdf.sort(key=len)
 
 merger = PdfMerger()
 
@@ -44,3 +47,5 @@ merger.write(f'{año}_{mes}_{dia} - Estadística Básica.pdf')
 merger.close()
 
 print("Se unieron los archivos \".pdf\". Proceso finalizado...")
+
+os.startfile(f'{año}_{mes}_{dia} - Estadística Básica.pdf')
