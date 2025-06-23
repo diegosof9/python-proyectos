@@ -43,9 +43,11 @@ for archivo in archivos_pdf:
 
 # merger.write(f'{nombre_archivo}.pdf')
 # merger.close()
-merger.write(f'{año}_{mes}_{dia} - Estadística Básica.pdf')
+nombre = f'{año}_{mes}_{dia} - Estadística Básica.pdf'
+
+merger.write(nombre)
 merger.close()
 
 print("Se unieron los archivos \".pdf\". Proceso finalizado...")
 
-os.startfile(f'{año}_{mes}_{dia} - Estadística Básica.pdf')
+os.startfile(nombre)
